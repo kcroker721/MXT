@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MIXD</title>
     <link rel="icon" type="image/png" href="icon.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="mainTest.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index_style.css">
     <script src="https://kit.fontawesome.com/3524e72bb1.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -21,9 +20,7 @@
                 <ul class="menu__box">
                     <li><a class="menu__item" href="index.html">Home</a></li>
                     <li><a class="menu__item" href="#">About</a></li>
-                    <li><a class="menu__item" href="#">Team</a></li>
                     <li><a class="menu__item" href="#">Contact</a></li>
-                    <li><a class="menu__item" href="#">Twitter</a></li>
                 </ul>
             </div>
         </div>
@@ -31,10 +28,12 @@
             <div class="left">
                 <div class="left-title">Search For A Drink</div>
                 <div class="searchBox">
-                    <input class="searchInput" type="text" placeholder="Search">
-                    <button class="searchButton">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
+                    <form id="searchForm">
+                        <input class="searchInput" type="text" id="cocktailName">
+                        <button class="searchButton" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
             <div class="middle">
@@ -43,13 +42,37 @@
             <div class="right">
                 <div class="right-title">Enter Ingredients You Have</div>
                 <div class="searchBox2">
-                    <input id="searchInput2" class="searchInput2" type="text" placeholder="Enter ingredients (comma separated)">
-                    <button id="searchButton2" class="searchButton2">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
+                    <form id="searchForm2">
+                        <input class="searchInput2" type="text" id="ingredientName" list="ingredientSuggestions">
+                        <datalist id="ingredientSuggestions">
+                            <option value="Lemon">
+                            <option value="Gin">
+                            <option value="Vodka">
+                            <option value="Sugar">
+                            <option value="Mint">
+                            <!-- Add more options as needed -->
+                        </datalist>
+                        <button class="searchButton2" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
+        <div id="cocktailList" class="results-container"></div>
     </div>
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const cocktailName = document.getElementById('cocktailName').value.trim();
+            window.location.href = `drink_details.html?name=${encodeURIComponent(cocktailName)}`;
+        });
+
+        document.getElementById('searchForm2').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const ingredients = document.getElementById('ingredientName').value.trim();
+            window.location.href = `drink_details.html?ingredients=${encodeURIComponent(ingredients)}`;
+        });
+    </script>
 </body>
 </html>
