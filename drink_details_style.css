@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body{
+background: #E9C46A;
+}
+
+img{
+padding-top: 20px;
+}
+
+h1 {
+  text-align: center;
+  padding: 0 0 10px 10px;
+}
+
+h3{
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+/* Center the "MIXD" title while keeping the Home icon on the left side */
+.nav {
+display: flex;
+align-items: center; /* Vertically center items */
+height: 100px;
+width: 100%;
+background-color: #264653;
+}
+
+/* Style the Home icon */
+.home-icon {
+text-decoration: none;
+color: #2A9D8F;
+font-size: 30px;
+margin-left: 20px; /* Add margin to the left to separate it from the edge */
+transition: color 0.3s, transform 0.3s ;
+}
+
+/* Add hover effect for the Home icon if desired */
+.home-icon:hover {
+color: #E9C46A;
+transform: scale(1.1);
+}
+
+
+/* Style the "MIXD" title */
+.title {
+text-align: center;
+font-size: 75px;
+font-style: italic;
+font-weight: bold;
+color: #2A9D8F;
+flex-grow: 1; /* Allow the title to take up remaining space and center it */
+}
+
+#drink-details {
+position: relative;
+text-align: center;
+}
+
+#ingredients-list {
+text-align: center;
+}
+
+/* Style for the container */
+#drink-details-container {
+text-align: center;
+position: relative; /* Add relative positioning */
+}
+
+/* Style for the "Search For Another Drink" button */
+.search-button {
+text-align: center; /* Center-align the text within the container */
+display: flex; /* Use flexbox to center the button horizontally */
+justify-content: center; /* Center the button horizontally */
+margin-bottom: 30px;
+}
+
+
+.search-button a {
+display: inline-block;
+padding: 10px 20px;
+background-color: #2A9D8F;
+color: #fff;
+text-decoration: none;
+font-weight: bold;
+border-radius: 5px;
+transition: background-color 0.3s;
+margin: 0 auto; /* Center the button horizontally */
+}
+
+.search-button a:hover {
+background-color: #264653;
+}
+
+.cocktail-details-container.last {
+margin-bottom: 40px; /* Adjust the margin as needed */
+}
+
+
+
+/*
+
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+body{
+  background: #E9C46A;
+}
+
+img{
+  padding-top: 20px;
+}
+
+h1 {
+    text-align: center;
+    padding: 0 0 10px 10px;
+}
+
+h3{
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.nav {
+  display: flex;
+  align-items: center; 
+  height: 100px;
+  width: 100%;
+  background-color: #264653;
+}
+
+.home-icon {
+  text-decoration: none;
+  color: #2A9D8F;
+  font-size: 30px;
+  margin-left: 20px; 
+  transition: color 0.3s, transform 0.3s ;
+}
+
+.home-icon:hover {
+  color: #E9C46A;
+  transform: scale(1.1);
+}
+
+
+.title {
+  text-align: center;
+  font-size: 75px;
+  font-style: italic;
+  font-weight: bold;
+  color: #2A9D8F;
+  flex-grow: 1; 
+}
+
+#drink-details {
+  position: relative;
+  text-align: center;
+}
+
+#ingredients-list {
+  text-align: center;
+}
+
+#drink-details-container {
+  text-align: center;
+  position: relative; 
+}
+
+.search-button {
+  text-align: center;
+  display: flex;
+  justify-content: center; 
+  margin-bottom: 30px;
+}
+
+
+.search-button a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2A9D8F;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin: 0 auto; 
+}
+
+.search-button a:hover {
+  background-color: #264653;
+}
+
+.cocktail-details-container.last {
+  margin-bottom: 40px; 
+}
+
+*/

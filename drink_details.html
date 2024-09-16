@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="icon.png">
+    <script src="searchIngredients.js"></script>
+    <link rel="stylesheet" href="drink_details_styleTest.css">
+    <script src="https://kit.fontawesome.com/3524e72bb1.js" crossorigin="anonymous"></script>
+    <title>Drink Details</title>
+</head>
+<body>
+    <div class="nav">
+        <a class="home-icon" href="indexTest.html">
+            <i class="fas fa-home"></i> <!-- Font Awesome Home icon -->
+        </a>
+        <div class="title">
+            MIXD
+        </div>
+    </div>
+
+    <div id="drink-details-container">
+        <div id="drink-details">
+            <!-- Drink details will be displayed here using JavaScript -->
+            <h1>Drink Details</h1>
+            <div id="ingredients-list">
+                <!-- Ingredients will be displayed here using JavaScript -->
+            </div>
+        </div>
+
+        <script>
+            // Function to parse URL parameters
+            function getUrlParameter(name) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(name);
+            }
+
+            // Get the drink details from the URL
+            const drinkDetailsJson = getUrlParameter("details");
+            const drinkDetails = JSON.parse(decodeURIComponent(drinkDetailsJson));
+
+            // Function to display drink details including ingredients
+            function displayDrinkDetails(details) {
+                const drinkDetailsContainer = document.getElementById("drink-details");
+                const ingredientsListContainer = document.getElementById("ingredients-list"); // Get the ingredients list div
+
+                if (!details.drinks) {
+                    drinkDetailsContainer.innerHTML = "<p>Drink details not found.</p>";
+                    return;
+                }
+
+                details.drinks.forEach(function(cocktails) {
+                    const cocktailName = cocktails.name; // Updated to use the correct field
+                    const cocktailAlcIngredients = cocktails.alcoholicIngredients //alcoholic ingredients displaying
+                    const cocktailNonAlcIngredients = cocktails.nonAlcoholicIngredients //non alc ingredients displaying
+                    const cocktailInstructions = cocktails.instructions; // Updated to use the correct field
+
+                    // Loop through ingredients and measures and add them to the ingredients list
+                    const ingredientsList = cocktail.alcoholicIngredients.map(ingredient => `<p>${ingredient}</p>`).join("");
+                    const nonAlcoholicIngredientsList = cocktail.nonAlcoholicIngredients.map(ingredient => `<p>${ingredient}</p>`).join("");
+
+                    // Example: Display the cocktail name, ingredient list, and instructions
+                    const cocktailElement = document.createElement("div");
+                    cocktailElement.innerHTML = `
+                        <h2>${cocktailName}</h2>
+                        <h3>Alcoholic Ingredients:</h3>
+                        ${cocktailAlcIngredients}
+                        <h3>Non-Alcoholic Ingredients:</h3>
+                        ${cocktailNonAlcIngredients}
+                        <h3>Instructions:</h3>
+                        <p>${cocktailInstructions}</p>
+                    `;
+
+                    drinkDetailsContainer.appendChild(cocktailElement);
+                });
+            }
+
+            // Display the drink details including ingredients
+            displayDrinkDetails(drinkDetails);
+        </script>
+
+        <div class="cocktail-details-container last">
+            <!-- Last cocktail details -->
+            <!-- ... your previous code for displaying cocktail details ... -->
+        </div>
+
+        <div class="search-button">
+            <a href="index.html">Search For Another Drink</a>
+        </div>
+    </div>
+</body>
+</html>

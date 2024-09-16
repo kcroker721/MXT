@@ -1,0 +1,432 @@
+/* Reset default styles for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* Navigation bar styles */
+.nav {
+  border: 0;
+  height: 100px;
+  width: 100%;
+  background-color: #264653;
+}
+
+body{
+  background-color: #E9C46A;
+}
+
+/* Title styles */
+.title {
+  text-align: center;
+  font-size: 75px;
+  font-style: italic;
+  color: #2A9D8F;
+  font-weight: bold;
+}
+
+/* Left and Right column styles */
+.left-right {
+  display: flex;
+}
+
+/* Left Right column styles */
+.left, .right {
+  width: 50%;
+  height: 100vh;
+  background: #E9C46A;
+}
+
+.left-title, .right-title {
+  padding-top: 400px;
+  text-align: center;
+  vertical-align: middle;
+  color: #264653;
+  font-size: 35px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Middle column styles */
+.middle {
+  width: 10px;
+  height: 100vh;
+  background: #264653;
+}
+
+/* Hamburger menu styles */
+#menu__toggle {
+  opacity: 0;
+}
+
+/* Styling for the hamburger menu icon */
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+  left: 0 !important;
+}
+
+.menu__btn {
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  width: 30px;
+  height: 35px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #2A9D8F;
+  transition-duration: .25s;
+}
+
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+
+.menu__box {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: #F4A261;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+  transition-duration: .25s;
+}
+
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #2A9D8F;
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: .25s;
+}
+
+.menu__item:hover {
+  background-color: #264653;
+}
+
+/**************/
+/* Search Bar */
+/**************/
+
+
+/* Search Box 1 style */
+.searchBox {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform:  translate(-50%,50%);
+    background: #2f3640;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+
+}
+
+/* Search Box 2 style */
+.searchBox2 {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform:  translate(-50%,50%);
+  background: #2f3640;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+
+}
+
+/* Expand search input on hover */
+.searchBox:hover > .searchInput, .searchBox2:hover > .searchInput2 {
+    width: 240px;
+    padding: 0 6px;
+}
+
+/* Change search button background on hover */
+.searchBox:hover > .searchButton, .searchBox2:hover > .searchButton2  {
+  background: white;
+  color : #2f3640;
+}
+
+/* Search Button styles */
+.searchButton, .searchButton2 {
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+/* Search Input styles */
+.searchInput, .searchInput2 {
+    border:none;
+    background: none;
+    outline:none;
+    float:left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+
+}
+
+/* Responsive styles */
+@media screen and (max-width: 620px) {
+
+  
+}
+
+
+/*
+
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+  }
+  
+  .nav {
+    border: 0;
+    height: 100px;
+    width: 100%;
+    background-color: #264653;
+  }
+  
+  body{
+    background-color: #E9C46A;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 75px;
+    font-style: italic;
+    color: #2A9D8F;
+    font-weight: bold;
+  }
+  
+  .left-right {
+    display: flex;
+  }
+  
+  .left, .right {
+    width: 50%;
+    height: 100vh;
+    background: #E9C46A;
+  }
+  
+  .left-title, .right-title {
+    padding-top: 400px;
+    text-align: center;
+    vertical-align: middle;
+    color: #264653;
+    font-size: 35px;
+    font-weight: bold;
+    font-style: italic;
+  }
+  
+  .middle {
+    width: 10px;
+    height: 100vh;
+    background: #264653;
+  }
+  
+  #menu__toggle {
+    opacity: 0;
+  }
+  
+  #menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  
+  #menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  
+  #menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  
+  #menu__toggle:checked ~ .menu__box {
+    left: 0 !important;
+  }
+  
+  .menu__btn {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    width: 30px;
+    height: 35px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #2A9D8F;
+    transition-duration: .25s;
+  }
+  
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+  
+  .menu__box {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: #F4A261;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    transition-duration: .25s;
+  }
+  
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #2A9D8F;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: .25s;
+  }
+  
+  .menu__item:hover {
+    background-color: #264653;
+  }
+  
+  
+  .searchBox {
+      position: absolute;
+      top: 50%;
+      left: 25%;
+      transform:  translate(-50%,50%);
+      background: #2f3640;
+      height: 40px;
+      border-radius: 40px;
+      padding: 10px;
+  
+  }
+  
+  .searchBox2 {
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform:  translate(-50%,50%);
+    background: #2f3640;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+  
+  }
+  
+  .searchBox:hover > .searchInput, .searchBox2:hover > .searchInput2 {
+      width: 240px;
+      padding: 0 6px;
+  }
+  
+  .searchBox:hover > .searchButton, .searchBox2:hover > .searchButton2  {
+    background: white;
+    color : #2f3640;
+  }
+  
+  .searchButton, .searchButton2 {
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #2f3640;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.4s;
+  }
+  
+  .searchInput, .searchInput2 {
+      border:none;
+      background: none;
+      outline:none;
+      float:left;
+      padding: 0;
+      color: white;
+      font-size: 16px;
+      transition: 0.4s;
+      line-height: 40px;
+      width: 0px;
+  
+  }
+  
+  @media screen and (max-width: 620px) {
+  
+    
+  }
+
+  */

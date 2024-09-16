@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drink Details</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="drink_detailsJSTest.js"></script>
+    <script src="https://kit.fontawesome.com/3524e72bb1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="nav">
+            <div class="title">MIXD</div>
+            <div class="hamburger-menu">
+                <input id="menu__toggle" type="checkbox">
+                <label class="menu__btn" for="menu__toggle">
+                    <span></span>
+                </label>
+                <ul class="menu__box">
+                    <li><a class="menu__item" href="indexTest.html">Home</a></li>
+                    <li><a class="menu__item" href="#">About</a></li>
+                    <li><a class="menu__item" href="#">Team</a></li>
+                    <li><a class="menu__item" href="#">Contact</a></li>
+                    <li><a class="menu__item" href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div id="drinkDetailsContainer">
+                <!-- The details will be dynamically inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drink Details</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="drink_detailsJSTest.js"></script>
+    <script src="https://kit.fontawesome.com/3524e72bb1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="nav">
+            <div class="title">MIXD</div>
+            <div class="hamburger-menu">
+                <input id="menu__toggle" type="checkbox">
+                <label class="menu__btn" for="menu__toggle">
+                    <span></span>
+                </label>
+                <ul class="menu__box">
+                    <li><a class="menu__item" href="index.html">Home</a></li>
+                    <li><a class="menu__item" href="#">About</a></li>
+                    <li><a class="menu__item" href="#">Team</a></li>
+                    <li><a class="menu__item" href="#">Contact</a></li>
+                    <li><a class="menu__item" href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div id="drinkDetailsContainer">
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            // Function to get query parameters from the URL
+            function getQueryParams() {
+                const params = new URLSearchParams(window.location.search);
+                return JSON.parse(decodeURIComponent(params.get('details')));
+            }
+
+            // Function to render drink details on the page
+            function renderDrinkDetails(drinks) {
+                const detailsContainer = $('#drinkDetailsContainer');
+
+                // Clear previous content
+                detailsContainer.empty();
+
+                // If no drinks found
+                if (!drinks || drinks.length === 0) {
+                    detailsContainer.append('<p>No drinks found.</p>');
+                    return;
+                }
+
+                // Loop through each drink and create HTML
+                drinks.forEach(drink => {
+                    const drinkElement = `
+                        <div class="drink-detail">
+                            <h2>${drink.name}</h2>
+                            <p><strong>Alcoholic Ingredients:</strong> ${drink.alcoholicIngredients.join(', ')}</p>
+                            <p><strong>Instructions:</strong> ${drink.instructions}</p>
+                        </div>
+                    `;
+                    detailsContainer.append(drinkElement);
+                });
+            }
+
+            // Get drink details from URL parameters
+            const { drinks } = getQueryParams();
+
+            // Render drink details
+            renderDrinkDetails(drinks);
+        });
+    </script>
+</body>
+</html>
+
+-->
